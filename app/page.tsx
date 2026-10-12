@@ -1,69 +1,165 @@
-import Image from "next/image";
+import React from "react";
+import type { Metadata } from "next";
+import { homeContent } from "@/content/home";
+import { Hero } from "@/components/sections/Hero";
+import { TextScrollFill } from "@/components/animation/TextScrollFill";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ProgrammeCard } from "@/components/ui/ProgrammeCard";
+import { VisionMission } from "@/components/sections/VisionMission";
+import { CTABand } from "@/components/sections/CTABand";
+import { GalleryTeaser } from "@/components/sections/GalleryTeaser";
+import { ContactStrip } from "@/components/sections/ContactStrip";
+import { Reveal } from "@/components/animation/Reveal";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "The Share Community — Sharing Hope. Changing Lives.",
+  description:
+    "The Share Community is dedicated to improving lives through compassion, opportunity and meaningful action.",
+};
+
+export default function HomePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    name: "The Share Community",
+    slogan: "Sharing Hope. Changing Lives.",
+    description:
+      "The Share Community is dedicated to improving lives through compassion, opportunity and meaningful action.",
+    founder: {
+      "@type": "Person",
+      name: "Late Pastor Vijay Kumar Mamuduri",
+      jobTitle: "Founder",
+    },
+    employee: [
+      {
+        "@type": "Person",
+        name: "Aaron Jeshurun Mamuduri",
+        jobTitle: "Chief Executive Officer",
+      },
+    ],
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* 1. Hero */}
+      <Hero />
+
+      {/* 2. Belief statement with Scroll-Scrubbed Text Fill */}
+      <section
+        className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream border-t border-teal-900/5 relative"
+        aria-label="Our Belief"
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <TextScrollFill
+            tag="h2"
+            text={homeContent.belief.statement}
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] font-serif font-bold tracking-tight mb-8"
+          />
+
+          <Reveal delay={0.2}>
+            <p className="text-lg sm:text-xl text-ink/80 font-sans leading-relaxed max-w-3xl mx-auto">
+              {homeContent.belief.continuation}
+            </p>
+          </Reveal>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* 3. Welcome to The Share Community */}
+      <section
+        className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white border-y border-teal-900/10 relative"
+        aria-labelledby="welcome-heading"
+      >
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading
+            title={homeContent.welcome.heading}
+            highlightWord="Share Community"
+          />
+
+          <div className="space-y-6 text-base sm:text-lg text-ink/85 leading-relaxed font-sans">
+            {homeContent.welcome.paragraphs.map((p, idx) => (
+              <Reveal key={idx} delay={idx * 0.1}>
+                <p>{p}</p>
+              </Reveal>
+            ))}
+
+            <Reveal delay={0.3}>
+              <div className="pt-6 border-t border-teal-900/10 flex items-center justify-center">
+                <span className="font-serif italic text-xl sm:text-2xl font-bold text-teal-900 tracking-wide">
+                  {homeContent.welcome.tagline}
+                </span>
+              </div>
+            </Reveal>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* 4. What We Do — 7 Cards */}
+      <section
+        className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream"
+        aria-labelledby="what-we-do-heading"
+      >
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading
+            title={homeContent.whatWeDo.heading}
+            highlightWord="Do"
+            subTitle="Compassionate support and meaningful opportunities across seven pillars"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {homeContent.whatWeDo.items.map((item, idx) => (
+              <ProgrammeCard
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                description={item.description}
+                accent={item.accent as "sun" | "coral" | "leaf" | "teal"}
+                icon={item.icon}
+                index={idx}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Our Vision & Our Mission */}
+      <VisionMission
+        vision={homeContent.visionMission.vision}
+        mission={homeContent.visionMission.mission}
+      />
+
+      {/* 6. Be Part of the Change */}
+      <section
+        className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-cream"
+        aria-labelledby="be-part-heading"
+      >
+        <div className="max-w-3xl mx-auto text-center">
+          <SectionHeading
+            title={homeContent.bePart.heading}
+            highlightWord="Change"
+          />
+
+          <div className="space-y-4 text-lg sm:text-xl text-ink/85 leading-relaxed">
+            {homeContent.bePart.paragraphs.map((p, idx) => (
+              <Reveal key={idx} delay={idx * 0.15}>
+                <p>{p}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Gallery Teaser */}
+      <GalleryTeaser />
+
+      {/* 8. Make a Difference Today (CTA Band) */}
+      <CTABand />
+
+      {/* 9. Contact Strip */}
+      <ContactStrip />
+    </>
   );
 }
