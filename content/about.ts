@@ -53,7 +53,7 @@ export const aboutContent = {
       "Although he is no longer with us, his vision remains at the heart of The Share Community.",
       "His legacy continues through every initiative undertaken in the spirit of compassion, dignity and service.",
     ],
-    imagePath: "/team/founder.jpg",
+    imagePath: "/images/Vijay_Kumar_Mamuduri.png",
     initials: "VKM",
   },
   ceo: {
@@ -64,7 +64,7 @@ export const aboutContent = {
       "His ambition is to honour the founder's legacy whilst developing the organisation into a strong, transparent and sustainable charitable organisation capable of creating meaningful opportunities and lasting change.",
       "With a long-term vision for the organisation, he is committed to developing sustainable programmes, establishing meaningful partnerships and ensuring that the founding principles of compassion and service continue for generations to come.",
     ],
-    imagePath: "/team/ceo.jpg",
+    imagePath: "/images/Aaron_Jeshurun_Mamuduri.png",
     initials: "AJM",
   },
   visionMission: {
