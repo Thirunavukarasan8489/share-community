@@ -3,6 +3,14 @@ export interface NavItem {
   href: string;
 }
 
+export interface ContactPhone {
+  number: string;
+  label: string;
+  country: string;
+  tel: string;
+  flag: string;
+}
+
 export interface SiteConfig {
   name: string;
   tagline: string;
@@ -11,7 +19,10 @@ export interface SiteConfig {
   contact: {
     email: string;
     phone: string;
+    phones: ContactPhone[];
     address: string;
+    addressLines: string[];
+    organizationName: string;
   };
   nav: NavItem[];
   footerNav: {
@@ -32,12 +43,36 @@ export const siteConfig: SiteConfig = {
   tagline: "Sharing Hope. Changing Lives.",
   description:
     "The Share Community is dedicated to improving lives through compassion, opportunity and meaningful action.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://sharecommunity.org",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://sharecommunity.com",
   contact: {
-    // Official placeholders as specified in AGENTS.md §3.8
-    email: "[Official Email]",
-    phone: "[Telephone Number]",
-    address: "[Official Address]",
+    email: "info@example.com",
+    phone: "+91 98493 78466 (India) · 07858577712 (UK)",
+    phones: [
+      {
+        number: "9849378466",
+        label: "India",
+        country: "India",
+        tel: "+919849378466",
+        flag: "🇮🇳",
+      },
+      {
+        number: "07858577712",
+        label: "United Kingdom",
+        country: "United Kingdom",
+        tel: "+447858577712",
+        flag: "🇬🇧",
+      },
+    ],
+    organizationName: "Share Community Trust",
+    address:
+      "Share Community Trust, Kottapeta, Lingana Boinacherla Post, Lingana boinacherla Village, Narasapuram Mandal, West Godavari District, Andhra Pradesh - 534275. India.",
+    addressLines: [
+      "Share Community Trust",
+      "Kottapeta, Lingana Boinacherla Post",
+      "Lingana boinacherla Village, Narasapuram Mandal",
+      "West Godavari District, Andhra Pradesh - 534275",
+      "India",
+    ],
   },
   nav: [
     { title: "Home", href: "/" },

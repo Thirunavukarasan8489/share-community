@@ -23,6 +23,16 @@ export const donateContent = {
     buttonText: "Contact Us to Donate",
     href: "/contact",
   },
+  transparency: {
+    title: "Financial Transparency & Accountability",
+    subTitle: "Your Trust. Our Responsibility.",
+    paragraphs: [
+      "At Share Community, we are committed to maintaining transparency, integrity, and accountability in managing every donation we receive.",
+      "Our financial activities are supported by a qualified Chartered Accountant for financial oversight and a legal adviser for guidance on legal and regulatory compliance.",
+      "We maintain proper records of donations and expenditure to ensure that funds are used responsibly for their intended charitable purposes.",
+      "We believe that every contribution matters, and we are dedicated to building trust through responsible financial management and transparent reporting.",
+    ],
+  },
 };
 
 export const volunteerContent = {

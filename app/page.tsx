@@ -37,6 +37,18 @@ export default function HomePage() {
         jobTitle: "Chief Executive Officer",
       },
     ],
+    email: "info@example.com",
+    telephone: ["+919849378466", "+447858577712"],
+    address: {
+      "@type": "PostalAddress",
+      name: "Share Community Trust",
+      streetAddress:
+        "Kottapeta, Lingana Boinacherla Post, Lingana boinacherla Village, Narasapuram Mandal",
+      addressLocality: "West Godavari District",
+      addressRegion: "Andhra Pradesh",
+      postalCode: "534275",
+      addressCountry: "IN",
+    },
   };
 
   return (

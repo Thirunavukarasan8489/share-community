@@ -102,7 +102,12 @@ export function Header() {
 
             {/* Mobile Menu Button */}
             <div className="flex md:hidden items-center gap-2">
-              <Button href="/donate" size="sm" variant="primary" className="py-1.5 px-3 text-xs">
+              <Button
+                href="/donate"
+                size="sm"
+                variant="primary"
+                className="py-1.5 px-3 text-xs"
+              >
                 Donate
               </Button>
               <button
@@ -160,10 +165,20 @@ export function Header() {
             </div>
 
             <div className="flex flex-col gap-3 mt-auto">
-              <Button href="/donate" size="lg" variant="primary" className="w-full">
+              <Button
+                href="/donate"
+                size="lg"
+                variant="primary"
+                className="w-full"
+              >
                 Donate Now
               </Button>
-              <Button href="/volunteer" size="md" variant="secondary" className="w-full">
+              <Button
+                href="/volunteer"
+                size="md"
+                variant="secondary"
+                className="w-full"
+              >
                 Become a Volunteer
               </Button>
             </div>

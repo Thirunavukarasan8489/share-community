@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { donateContent } from "@/content/pages";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { DonateWidget } from "@/components/ui/DonateWidget";
+import { FinancialTransparency } from "@/components/sections/FinancialTransparency";
 import { ContactStrip } from "@/components/sections/ContactStrip";
 
 export const metadata: Metadata = {
@@ -25,6 +26,8 @@ export default function DonatePage() {
           <DonateWidget />
         </div>
       </section>
+
+      <FinancialTransparency />
 
       <ContactStrip />
     </>

@@ -20,11 +20,14 @@ This document lists the specific assets, configuration details, and official cre
 
 ---
 
-## 3. Official Contact Details
-Update `/config/site.ts` with genuine values replacing the current placeholders:
-- **Email Address**: Replace `[Official Email]` with genuine contact address (e.g. `info@sharecommunity.org`).
-- **Telephone Number**: Replace `[Telephone Number]` with genuine phone number.
-- **Physical / Postal Address**: Replace `[Official Address]` with genuine organisation address.
+## 3. Official Contact Details (COMPLETED)
+- **Organisation Name**: Share Community Trust
+- **Address**: Kottapeta, Lingana Boinacherla Post, Lingana boinacherla Village, Narasapuram Mandal, West Godavari District, Andhra Pradesh - 534275. India.
+- **Email**: `info@example.com`
+- **Phone Numbers**:
+  - India 🇮🇳: `9849378466` (`+919849378466`)
+  - United Kingdom 🇬🇧: `07858577712` (`+447858577712`)
+- Active across `/config/site.ts`, Contact page, ContactStrip, and Footer.
 
 ---
 

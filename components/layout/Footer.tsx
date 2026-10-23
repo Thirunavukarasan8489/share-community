@@ -60,18 +60,45 @@ export function Footer() {
             <h3 className="font-serif text-lg font-bold text-white tracking-wide mb-4">
               Contact Us
             </h3>
-            <ul className="space-y-3 text-sm text-teal-100/80">
+            <ul className="space-y-3.5 text-sm text-teal-100/80">
               <li className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-sun-500 shrink-0 mt-1" aria-hidden="true" />
-                <span>{siteConfig.contact.email}</span>
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="hover:text-sun-200 break-all transition-colors"
+                >
+                  {siteConfig.contact.email}
+                </a>
               </li>
+
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-sun-500 shrink-0 mt-1" aria-hidden="true" />
-                <span>{siteConfig.contact.phone}</span>
+                <div className="space-y-1">
+                  {siteConfig.contact.phones.map((p) => (
+                    <a
+                      key={p.tel}
+                      href={`tel:${p.tel}`}
+                      className="block hover:text-sun-200 transition-colors text-xs sm:text-sm"
+                    >
+                      <span className="font-medium text-white">{p.number}</span>{" "}
+                      <span className="text-teal-100/70 text-xs">
+                        ({p.label} {p.flag})
+                      </span>
+                    </a>
+                  ))}
+                </div>
               </li>
+
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-sun-500 shrink-0 mt-1" aria-hidden="true" />
-                <span>{siteConfig.contact.address}</span>
+                <address className="not-italic leading-relaxed text-xs text-teal-100/90 font-sans space-y-0.5">
+                  <span className="font-semibold text-white block">
+                    {siteConfig.contact.organizationName}
+                  </span>
+                  <span>Kottapeta, Lingana Boinacherla Post,</span>
+                  <span className="block">Lingana boinacherla Village, Narasapuram Mandal,</span>
+                  <span className="block">West Godavari District, Andhra Pradesh - 534275. India.</span>
+                </address>
               </li>
             </ul>
           </div>
