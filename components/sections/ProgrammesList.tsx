@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { programmesContent } from "@/content/programmes";
 import {
   ChevronRight,
@@ -10,7 +12,35 @@ import {
   Smile,
   Users,
   Briefcase,
+  ArrowUpRight,
 } from "lucide-react";
+
+const programmeImages: Record<string, { src: string; alt: string }> = {
+  "education-for-all": {
+    src: "/images/gallery/Education%20Support.jpeg",
+    alt: "Education Support programme providing learning access and materials",
+  },
+  "healthcare-and-wellbeing": {
+    src: "/images/gallery/Healthcare%20%26%20Wellbeing.jpeg",
+    alt: "Healthcare and wellbeing initiatives in the local community",
+  },
+  "food-and-essential-assistance": {
+    src: "/images/gallery/Food%20%26%20Essential%20Assistance.jpeg",
+    alt: "Food and essential assistance provided to individuals and families",
+  },
+  "childrens-welfare": {
+    src: "/images/gallery/Children%27s%20Welfare.jpeg",
+    alt: "Children's welfare support ensuring safe and encouraging environments",
+  },
+  "community-development": {
+    src: "/images/gallery/Community%20Development.jpeg",
+    alt: "Community development activities fostering local progress",
+  },
+  "livelihood-and-skills-development": {
+    src: "/images/gallery/Livelihood%20%26%20Skills%20Development.jpeg",
+    alt: "Livelihood and vocational skills training for self-reliance",
+  },
+};
 
 export function ProgrammesList() {
   const { programmes } = programmesContent;
@@ -38,7 +68,7 @@ export function ProgrammesList() {
   }, [programmes]);
 
   const renderIcon = (id: string) => {
-    const iconClass = "w-16 h-16 sm:w-20 sm:h-20 transition-transform duration-300 group-hover:scale-105";
+    const iconClass = "w-5 h-5";
 
     switch (id) {
       case "education-for-all":
@@ -96,12 +126,13 @@ export function ProgrammesList() {
         <div className="lg:col-span-8 space-y-14 lg:space-y-20">
           {programmes.map((prog, idx) => {
             const isReversed = idx % 2 === 1;
+            const imgData = programmeImages[prog.id];
 
             return (
               <section
                 key={prog.id}
                 id={prog.id}
-                className="scroll-mt-32 group relative bg-white rounded-3xl p-8 sm:p-10 lg:p-12 border border-teal-900/10 shadow-xs hover:shadow-md transition-shadow overflow-hidden"
+                className="scroll-mt-32 group relative bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-teal-900/10 shadow-xs hover:shadow-md transition-shadow overflow-hidden"
               >
                 <div
                   className={`grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-center ${
@@ -110,10 +141,19 @@ export function ProgrammesList() {
                 >
                   {/* Text Column */}
                   <div
-                    className={`md:col-span-8 space-y-4 ${
+                    className={`md:col-span-7 space-y-4 ${
                       isReversed ? "md:order-2" : "md:order-1"
                     }`}
                   >
+                    <div className="flex items-center space-x-2">
+                      <span className="w-8 h-8 rounded-xl bg-teal-100 flex items-center justify-center">
+                        {renderIcon(prog.id)}
+                      </span>
+                      <span className="text-xs uppercase tracking-wider font-semibold text-teal-900/70">
+                        Programme {idx + 1}
+                      </span>
+                    </div>
+
                     <h2 className="text-2xl sm:text-3xl font-serif font-bold text-ink">
                       {prog.title}
                     </h2>
@@ -127,27 +167,50 @@ export function ProgrammesList() {
                         <p key={pIdx}>{p}</p>
                       ))}
                     </div>
+
+                    <div className="pt-2">
+                      <Link
+                        href="/gallery"
+                        className="inline-flex items-center text-xs sm:text-sm font-semibold text-teal-900 hover:text-coral-500 transition-colors"
+                      >
+                        <span>View photos in gallery</span>
+                        <ArrowUpRight className="w-4 h-4 ml-1" />
+                      </Link>
+                    </div>
                   </div>
 
-                  {/* Icon Column */}
+                  {/* Image Column */}
                   <div
-                    className={`md:col-span-4 flex items-center justify-center ${
+                    className={`md:col-span-5 flex items-center justify-center ${
                       isReversed ? "md:order-1" : "md:order-2"
                     }`}
                   >
-                    <div
-                      className={`w-36 h-36 sm:w-44 sm:h-44 rounded-3xl p-6 border flex items-center justify-center shadow-xs transition-colors ${
-                        prog.accent === "sun"
-                          ? "bg-sun-200/40 border-sun-500/30"
-                          : prog.accent === "coral"
-                          ? "bg-coral-500/10 border-coral-500/30"
-                          : prog.accent === "leaf"
-                          ? "bg-leaf-500/10 border-leaf-500/30"
-                          : "bg-teal-100/50 border-teal-600/30"
-                      }`}
-                    >
-                      {renderIcon(prog.id)}
-                    </div>
+                    {imgData ? (
+                      <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-teal-900/10 shadow-xs group-hover:shadow-md transition-all">
+                        <Image
+                          src={imgData.src}
+                          alt={imgData.alt}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 360px"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent opacity-60" />
+                      </div>
+                    ) : (
+                      <div
+                        className={`w-36 h-36 sm:w-44 sm:h-44 rounded-3xl p-6 border flex items-center justify-center shadow-xs transition-colors ${
+                          prog.accent === "sun"
+                            ? "bg-sun-200/40 border-sun-500/30"
+                            : prog.accent === "coral"
+                            ? "bg-coral-500/10 border-coral-500/30"
+                            : prog.accent === "leaf"
+                            ? "bg-leaf-500/10 border-leaf-500/30"
+                            : "bg-teal-100/50 border-teal-600/30"
+                        }`}
+                      >
+                        {renderIcon(prog.id)}
+                      </div>
+                    )}
                   </div>
                 </div>
               </section>

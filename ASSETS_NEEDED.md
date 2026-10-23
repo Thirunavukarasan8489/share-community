@@ -12,14 +12,11 @@ This document lists the specific assets, configuration details, and official cre
 
 ---
 
-## 2. Leadership Photographs
-Respectful, warm-toned portraits for the leadership cards on `/about`:
+## 2. Leadership Photographs (COMPLETED)
 - **Late Pastor Vijay Kumar Mamuduri (Founder)**:
-  - File path: `/public/team/founder.jpg`
-  - Current placeholder: Styled monogram avatar (`VKM`) in a warm sunrise frame.
+  - Provided and active at `/public/images/Vijay_Kumar_Mamuduri.png`.
 - **Aaron Jeshurun Mamuduri (Chief Executive Officer)**:
-  - File path: `/public/team/ceo.jpg`
-  - Current placeholder: Styled monogram avatar (`AJM`) in a warm sunrise frame.
+  - Provided and active at `/public/images/Aaron_Jeshurun_Mamuduri.png`.
 
 ---
 
@@ -40,11 +37,17 @@ Update `/config/site.ts` with genuine values replacing the current placeholders:
 
 ---
 
-## 5. Gallery Photography
+## 5. Gallery Photography (COMPLETED)
 - **Authentic Project Photographs**:
-  - Genuine photos of activities, community distributions, learning sessions, and workshops.
-  - Drop files into `/public/gallery/` and declare them in `/data/gallery.ts` with descriptive captions.
-  - *Note: As per charity integrity rules, no generic stock photos are included.*
+  - 7 genuine community initiative photos provided and active in `/public/images/gallery/`:
+    1. `Education Support.jpeg`
+    2. `Healthcare & Wellbeing.jpeg`
+    3. `Food & Essential Assistance.jpeg`
+    4. `Children's Welfare.jpeg`
+    5. `Community Development.jpeg`
+    6. `Livelihood & Skills Development.jpeg`
+    7. `Emergency & Disaster Relief.jpeg`
+  - Integrated into `/data/gallery.ts`, `/gallery` grid with category filters and accessible lightbox, `/programmes` page, and the Home page gallery preview.
 
 ---
 
