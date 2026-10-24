@@ -46,17 +46,17 @@ export const siteConfig: SiteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://sharecommunity.com",
   contact: {
     email: "info@example.com",
-    phone: "+91 98493 78466 (India) · 07858577712 (UK)",
+    phone: "+91 98493 78466 (India) · +44 7858577712 (UK)",
     phones: [
       {
-        number: "9849378466",
+        number: "+91 9849378466",
         label: "India",
         country: "India",
         tel: "+919849378466",
         flag: "🇮🇳",
       },
       {
-        number: "07858577712",
+        number: "+44 7858577712",
         label: "United Kingdom",
         country: "United Kingdom",
         tel: "+447858577712",
