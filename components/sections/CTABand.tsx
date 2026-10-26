@@ -51,7 +51,7 @@ export function CTABand() {
                   <div
                     className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 ${
                       isDonate
-                        ? "bg-sun-500 text-ink shadow-xs"
+                        ? "bg-sun-500 text-white shadow-xs"
                         : card.accent === "leaf"
                         ? "bg-leaf-500/15 text-leaf-500"
                         : "bg-teal-100 text-teal-900"

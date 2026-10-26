@@ -10,7 +10,7 @@ export function DonateWidget() {
 
   return (
     <div className="bg-white rounded-3xl p-6 sm:p-12 border-2 border-sun-500/40 shadow-xs text-center max-w-2xl mx-auto">
-      <div className="w-14 h-14 rounded-2xl bg-sun-500 text-ink flex items-center justify-center mx-auto mb-6 shadow-xs">
+      <div className="w-14 h-14 rounded-2xl bg-sun-500 text-white flex items-center justify-center mx-auto mb-6 shadow-xs">
         <Heart className="w-7 h-7 fill-current" aria-hidden="true" />
       </div>
 

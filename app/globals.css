@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #0B2E36;
-  --teal-900: #0F4C5C;
-  --teal-600: #1B7F8C;
-  --teal-100: #D6EEF0;
-  --sun-500: #F5A524;
-  --sun-200: #FDE3A8;
-  --coral-500: #E8644F;
-  --leaf-500: #3BA776;
-  --cream: #FFF8EC;
+  --ink: #11252D;
+  --teal-900: #14353E;
+  --teal-600: #1B6C7B;
+  --teal-100: #E8F3F5;
+  --sun-500: #F06714;
+  --sun-200: #FFE3D1;
+  --coral-500: #E05308;
+  --leaf-500: #2E9E6B;
+  --cream: #F9FAFB;
   --white: #FFFFFF;
 }
 
 @theme {
-  --color-ink: #0B2E36;
-  --color-teal-900: #0F4C5C;
-  --color-teal-600: #1B7F8C;
-  --color-teal-100: #D6EEF0;
-  --color-sun-500: #F5A524;
-  --color-sun-200: #FDE3A8;
-  --color-coral-500: #E8644F;
-  --color-leaf-500: #3BA776;
-  --color-cream: #FFF8EC;
+  --color-ink: #11252D;
+  --color-teal-900: #14353E;
+  --color-teal-600: #1B6C7B;
+  --color-teal-100: #E8F3F5;
+  --color-sun-500: #F06714;
+  --color-sun-200: #FFE3D1;
+  --color-coral-500: #E05308;
+  --color-leaf-500: #2E9E6B;
+  --color-cream: #F9FAFB;
   --color-white: #FFFFFF;
 
   --font-serif: var(--font-fraunces), serif;
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :focus-visible {
-  outline: 2px solid var(--teal-600);
+  outline: 2px solid var(--sun-500);
   outline-offset: 3px;
 }
 

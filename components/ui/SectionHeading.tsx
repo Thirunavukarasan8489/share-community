@@ -54,7 +54,7 @@ export function SectionHeading({
                   <motion.path
                     d="M2 9 C 25 3, 75 11, 98 4"
                     fill="none"
-                    stroke="#F5A524"
+                    stroke="var(--sun-500)"
                     strokeWidth="3.5"
                     strokeLinecap="round"
                   />

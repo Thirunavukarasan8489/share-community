@@ -24,11 +24,11 @@ export function Button({
   }[size];
 
   const variantClasses = {
-    // Primary: sun-500 fill with ink text (strictly conforms to WCAG AA)
+    // Primary: vibrant orange fill with crisp white text matching the template
     primary:
-      "bg-sun-500 text-ink hover:bg-sun-500/90 hover:shadow-md font-semibold focus-visible:ring-ink active:scale-[0.98]",
+      "bg-sun-500 text-white hover:bg-coral-500 hover:shadow-md font-semibold focus-visible:ring-2 focus-visible:ring-sun-500 active:scale-[0.98]",
     secondary:
-      "bg-white/80 hover:bg-white text-teal-900 border border-teal-900/20 hover:border-teal-900/40 font-medium active:scale-[0.98]",
+      "bg-white hover:bg-teal-100/60 text-teal-900 border border-teal-900/20 hover:border-teal-900/40 font-medium active:scale-[0.98]",
     ghost:
       "bg-transparent text-ink hover:bg-teal-900/10 font-medium active:scale-[0.98]",
     coral:
