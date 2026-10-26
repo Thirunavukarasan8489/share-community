@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface LogoProps {
   className?: string;
@@ -14,7 +15,7 @@ export function Logo({ className = "", isDark = false }: LogoProps) {
       aria-label="The Share Community — Home"
     >
       {/* Sunrise & Hands SVG Motif */}
-      <span
+      {/* <span
         className={`w-9 h-9 rounded-full flex items-center justify-center transition-transform group-hover:scale-105 duration-300 ${
           isDark
             ? "bg-sun-500 text-teal-900"
@@ -31,17 +32,16 @@ export function Logo({ className = "", isDark = false }: LogoProps) {
           className="w-5 h-5"
           aria-hidden="true"
         >
-          {/* Sunrise arc and rays */}
           <circle cx="12" cy="12" r="4" fill="currentColor" fillOpacity="0.2" />
           <path d="M12 3v3" />
           <path d="M5.6 5.6l2.1 2.1" />
           <path d="M18.4 5.6l-2.1 2.1" />
           <path d="M3 12h3" />
           <path d="M18 12h3" />
-          {/* Community caring hands arc */}
           <path d="M7 17a5 5 0 0 0 10 0" strokeWidth="2.2" />
         </svg>
-      </span>
+      </span> */}
+      <Image src="/logo.png" alt="Logo" width={50} height={50} />
 
       <div className="flex flex-col">
         <span
