@@ -6,7 +6,18 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-teal-900 text-white relative overflow-hidden dark-surface border-t border-teal-800">
+    <footer
+      className="text-white relative overflow-hidden dark-surface border-t border-teal-800 bg-cover bg-center bg-no-repeat md:bg-fixed"
+      style={{
+        backgroundImage: "url('/images/gallery/Education%20Support.jpeg')",
+      }}
+    >
+      {/* Deep teal-900 fade overlay to guarantee legibility and subtle photographic texture */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-teal-900/96 via-teal-900/93 to-teal-900/98 pointer-events-none"
+        aria-hidden="true"
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand Column */}

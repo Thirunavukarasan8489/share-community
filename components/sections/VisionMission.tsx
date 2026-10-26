@@ -20,9 +20,18 @@ export function VisionMission({ vision, mission }: VisionMissionProps) {
 
   return (
     <section
-      className="relative bg-teal-900 text-white py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden dark-surface"
+      className="relative text-white py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden dark-surface bg-cover bg-center bg-no-repeat md:bg-fixed"
+      style={{
+        backgroundImage: "url('/images/gallery/Community%20Development.jpeg')",
+      }}
       aria-labelledby="vision-mission-heading"
     >
+      {/* Deep teal-900 fade overlay to ensure text contrast and warm photographic depth */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-teal-900/95 via-teal-900/90 to-teal-900/95 pointer-events-none"
+        aria-hidden="true"
+      />
+
       <h2 id="vision-mission-heading" className="sr-only">
         Our Vision and Mission
       </h2>
@@ -35,10 +44,10 @@ export function VisionMission({ vision, mission }: VisionMissionProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-3xl p-8 sm:p-10 lg:p-12 flex flex-col justify-between shadow-sm"
+            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 sm:p-10 lg:p-12 flex flex-col justify-between shadow-lg hover:bg-white/15 transition-all"
           >
             <div>
-              <div className="w-14 h-14 rounded-2xl bg-sun-500 text-teal-900 flex items-center justify-center mb-6 shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-sun-500 text-white flex items-center justify-center mb-6 shadow-sm">
                 <Compass className="w-7 h-7" aria-hidden="true" />
               </div>
 
@@ -58,7 +67,7 @@ export function VisionMission({ vision, mission }: VisionMissionProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-            className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-3xl p-8 sm:p-10 lg:p-12 flex flex-col justify-between shadow-sm"
+            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 sm:p-10 lg:p-12 flex flex-col justify-between shadow-lg hover:bg-white/15 transition-all"
           >
             <div>
               <div className="w-14 h-14 rounded-2xl bg-teal-600 text-white flex items-center justify-center mb-6 shadow-sm">
