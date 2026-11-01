@@ -14,6 +14,7 @@ import {
   Briefcase,
   ArrowUpRight,
 } from "lucide-react";
+import { WatermarkLogo } from "@/components/ui/WatermarkLogo";
 
 const programmeImages: Record<string, { src: string; alt: string }> = {
   "education-for-all": {
@@ -89,10 +90,15 @@ export function ProgrammesList() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-        {/* Sticky Desktop Side Index */}
-        <aside className="hidden lg:block lg:col-span-4 sticky top-28 space-y-2 bg-white p-6 rounded-3xl border border-teal-900/10 shadow-sm">
+    <div className="relative overflow-hidden py-12 lg:py-20">
+      {/* Background Watermark Logos */}
+      {/* <WatermarkLogo size="xl" position="top-right" rotate={12} opacityClassName="opacity-[0.035] sm:opacity-[0.045]" /> */}
+      {/* <WatermarkLogo size="xl" position="bottom-left" rotate={-8} opacityClassName="opacity-[0.03] sm:opacity-[0.04]" /> */}
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          {/* Sticky Desktop Side Index */}
+          <aside className="hidden lg:block lg:col-span-4 sticky top-28 space-y-2 bg-white p-6 rounded-3xl border border-teal-900/10 shadow-sm">
           <p className="text-xs uppercase tracking-wider font-bold text-teal-900/70 mb-4 px-3">
             Programmes Index
           </p>
@@ -134,8 +140,10 @@ export function ProgrammesList() {
                 id={prog.id}
                 className="scroll-mt-32 group relative bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-teal-900/10 shadow-xs hover:shadow-md transition-shadow overflow-hidden"
               >
+                <WatermarkLogo size="sm" position="bottom-right" rotate={-8} opacityClassName="opacity-[0.025] group-hover:opacity-[0.05]" />
+
                 <div
-                  className={`grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-center ${
+                  className={`relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-center ${
                     isReversed ? "md:flex-row-reverse" : ""
                   }`}
                 >
@@ -219,5 +227,6 @@ export function ProgrammesList() {
         </div>
       </div>
     </div>
+  </div>
   );
 }

@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProgrammesList } from "@/components/sections/ProgrammesList";
 import { FutureProgrammesMarquee } from "@/components/sections/FutureProgrammesMarquee";
 import { ContactStrip } from "@/components/sections/ContactStrip";
+import { WatermarkLogo } from "@/components/ui/WatermarkLogo";
 import { Reveal } from "@/components/animation/Reveal";
 
 export const metadata: Metadata = {
@@ -19,8 +20,10 @@ export default function ProgrammesPage() {
   return (
     <>
       {/* Header and Intro */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-teal-100/40 to-cream">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative overflow-hidden pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-teal-100/40 to-cream">
+        <WatermarkLogo size="sm" position="center" rotate={-5} opacityClassName="opacity-[0.06] sm:opacity-[0.07]" />
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <SectionHeading
             title={header.title}
             subTitle={header.subLine}

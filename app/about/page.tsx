@@ -6,6 +6,7 @@ import { StoryTimeline } from "@/components/sections/StoryTimeline";
 import { PersonCard } from "@/components/ui/PersonCard";
 import { VisionMission } from "@/components/sections/VisionMission";
 import { ValueCard } from "@/components/ui/ValueCard";
+import { WatermarkLogo } from "@/components/ui/WatermarkLogo";
 import { Reveal } from "@/components/animation/Reveal";
 import { ContactStrip } from "@/components/sections/ContactStrip";
 
@@ -16,13 +17,21 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const { header, ourStory, founder, ceo, visionMission, values } = aboutContent;
+  const { header, ourStory, founder, ceo, visionMission, values } =
+    aboutContent;
 
   return (
     <>
       {/* 1 & 2. Header & Intro */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-teal-100/40 to-cream">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-teal-100/40 to-cream">
+        <WatermarkLogo
+          size="sm"
+          position="center"
+          rotate={-5}
+          opacityClassName="opacity-[0.06] sm:opacity-[0.07]"
+        />
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <SectionHeading
             title={header.title}
             subTitle={header.subLine}
@@ -41,10 +50,12 @@ export default function AboutPage() {
 
       {/* 3. Our Story — Vertical Scroll Timeline */}
       <section
-        className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream border-t border-teal-900/5"
+        className="relative overflow-hidden py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream border-t border-teal-900/5"
         aria-labelledby="our-story-heading"
       >
-        <div className="max-w-5xl mx-auto">
+        {/* <WatermarkLogo size="xl" position="top-right" rotate={12} opacityClassName="opacity-[0.035] sm:opacity-[0.045]" /> */}
+
+        <div className="relative z-10 max-w-5xl mx-auto">
           <SectionHeading
             title={ourStory.heading}
             highlightWord="Story"
@@ -101,10 +112,17 @@ export default function AboutPage() {
 
       {/* 7. Our Values — 8 Cards */}
       <section
-        className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream"
+        className="relative overflow-hidden py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream"
         aria-labelledby="our-values-heading"
       >
-        <div className="max-w-7xl mx-auto">
+        <WatermarkLogo
+          size="xl"
+          position="center"
+          rotate={0}
+          opacityClassName="opacity-[0.045] sm:opacity-[0.055]"
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto">
           <SectionHeading
             title={values.heading}
             highlightWord="Values"
