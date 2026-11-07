@@ -43,9 +43,9 @@ export const siteConfig: SiteConfig = {
   tagline: "Sharing Hope. Changing Lives.",
   description:
     "The Share Community is dedicated to improving lives through compassion, opportunity and meaningful action.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://sharecommunity.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://sharecommunitytrust.com",
   contact: {
-    email: "info@example.com",
+    email: "info@sharecommunitytrust.com",
     phone: "+91 98493 78466 (India) · +44 7858577712 (UK)",
     phones: [
       {
