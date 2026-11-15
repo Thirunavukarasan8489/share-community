@@ -7,24 +7,26 @@
 
 ## 1. Project Summary
 
-| Item | Detail |
-|---|---|
-| Organisation | The Share Community |
-| Tagline | **Sharing Hope. Changing Lives.** |
-| Type | Charity / community organisation website (non-profit, trust-led) |
-| Founder | Late Pastor Vijay Kumar Mamuduri |
-| CEO | Aaron Jeshurun Mamuduri |
-| Goal | Build trust, tell the story, explain the programmes, and convert visitors into **donors, volunteers and partners** |
-| Look & feel | Warm, hopeful community site. Attractive colour combination. **Scroll-driven animated storytelling.** |
-| Language | **British English** (programmes, whilst, realise, organisation). Never convert to American spelling. |
+| Item         | Detail                                                                                                             |
+| ------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Organisation | The Share Community                                                                                                |
+| Tagline      | **Sharing Hope. Changing Lives.**                                                                                  |
+| Type         | Charity / community organisation website (non-profit, trust-led)                                                   |
+| Founder      | Late Pastor Vijay Kumar Mamuduri                                                                                   |
+| CEO          | Aaron Jeshurun Mamuduri                                                                                            |
+| Goal         | Build trust, tell the story, explain the programmes, and convert visitors into **donors, volunteers and partners** |
+| Look & feel  | Warm, hopeful community site. Attractive colour combination. **Scroll-driven animated storytelling.**              |
+| Language     | **British English** (programmes, whilst, realise, organisation). Never convert to American spelling.               |
 
 ### Audience
+
 1. Potential donors and supporters
 2. Volunteers (time, knowledge, skills)
 3. Organisations, businesses, professionals and community groups seeking partnership
 4. Families and communities who may want to learn about the support available
 
 ### Emotional Brief
+
 The site must feel **compassionate, dignified, trustworthy, warm and hopeful**. It must NOT feel corporate, cold, flashy, guilt-tripping or exploitative of poverty. Treat every person described with dignity and respect.
 
 ---
@@ -50,20 +52,21 @@ Do not add heavy dependencies (no jQuery, no Bootstrap, no full UI kits, no 3D/W
 Content below comes from the owner's approved document. **Use the copy verbatim.** Do not rewrite, embellish, shorten or "improve" it. You may only split it across sections for layout.
 
 ### 3.1 Navigation (sticky header)
+
 `Home · About · Programmes · Gallery · Contact` plus a prominent **Donate** button (accent colour) in the header on every page. Mobile: full-screen slide-in menu. Header is transparent on the hero and becomes a blurred cream/white bar after scrolling ~80px, with a thin scroll-progress bar beneath it.
 
 ### 3.2 Pages
 
-| Route | Purpose |
-|---|---|
-| `/` | Home |
-| `/about` | About Us (story, founder, CEO, vision, mission, values) |
-| `/programmes` | Our Programmes |
-| `/gallery` | Gallery (see §3.6 — placeholder-ready) |
-| `/donate` | Donate |
-| `/volunteer` | Become a Volunteer |
-| `/partner` | Partner With Us |
-| `/contact` | Contact + message form |
+| Route         | Purpose                                                 |
+| ------------- | ------------------------------------------------------- |
+| `/`           | Home                                                    |
+| `/about`      | About Us (story, founder, CEO, vision, mission, values) |
+| `/programmes` | Our Programmes                                          |
+| `/gallery`    | Gallery (see §3.6 — placeholder-ready)                  |
+| `/donate`     | Donate                                                  |
+| `/volunteer`  | Become a Volunteer                                      |
+| `/partner`    | Partner With Us                                         |
+| `/contact`    | Contact + message form                                  |
 
 ### 3.3 HOME (`/`) — section order
 
@@ -83,7 +86,8 @@ Content below comes from the owner's approved document. **Use the copy verbatim.
 9. **Contact strip** and **Footer**
 
 ### 3.4 ABOUT (`/about`)
-1. Title: **About The Share Community** — *A Legacy of Compassion. A Future of Hope.*
+
+1. Title: **About The Share Community** — _A Legacy of Compassion. A Future of Hope._
 2. Intro paragraphs ("established upon a heartfelt commitment…" and "Our story is founded upon compassion…")
 3. **Our Story** — the Late Pastor Vijay Kumar Mamuduri → his passing → Aaron Jeshurun Mamuduri as CEO → ambition for the future. Build this as a **vertical scroll timeline** (see §6).
 4. **Our Founder** — Late Pastor Vijay Kumar Mamuduri, Founder, with the founder copy. Use a respectful portrait placeholder (§7).
@@ -92,27 +96,30 @@ Content below comes from the owner's approved document. **Use the copy verbatim.
 7. **Our Values** — 8 cards: Compassion · Integrity · Respect · Transparency · Excellence · Service · Partnership · Hope, each with its one-line description.
 
 ### 3.5 PROGRAMMES (`/programmes`)
-Title: **Our Programmes** — *Creating Opportunities. Strengthening Communities. Transforming Lives.* Followed by the two intro paragraphs.
+
+Title: **Our Programmes** — _Creating Opportunities. Strengthening Communities. Transforming Lives._ Followed by the two intro paragraphs.
 
 Six programme blocks, each with a heading, a sub-line and the full body copy. Alternate left/right layout on desktop:
 
-1. **Education for All** — *Opening Doors to Brighter Futures*
-2. **Healthcare & Wellbeing** — *Supporting Health. Preserving Dignity.*
-3. **Food & Essential Assistance** — *Supporting People Through Difficult Times*
-4. **Children's Welfare** — *Helping Every Child Flourish*
-5. **Community Development** — *Building Stronger Communities Together*
-6. **Livelihood & Skills Development** — *Creating Opportunity. Building Independence.*
+1. **Education for All** — _Opening Doors to Brighter Futures_
+2. **Healthcare & Wellbeing** — _Supporting Health. Preserving Dignity._
+3. **Food & Essential Assistance** — _Supporting People Through Difficult Times_
+4. **Children's Welfare** — _Helping Every Child Flourish_
+5. **Community Development** — _Building Stronger Communities Together_
+6. **Livelihood & Skills Development** — _Creating Opportunity. Building Independence._
 
 Then **Future Programmes**: show as a row/marquee of pill tags — Skills & Vocational Training · Women's Empowerment · Youth Development · Elderly Support · Community Health · Employment & Livelihoods · Emergency & Disaster Relief · Sustainable Community Projects — followed by the line "Programmes will be developed according to genuine community needs, available resources and our capacity to deliver them responsibly and effectively."
 
 ### 3.6 GALLERY (`/gallery`)
-Copy: **Our Gallery** — *See Our Work in Action.* "Our gallery will share genuine photographs and stories from our charitable activities, projects and community initiatives. It will enable supporters to see the people, communities and stories at the heart of our work."
+
+Copy: **Our Gallery** — _See Our Work in Action._ "Our gallery will share genuine photographs and stories from our charitable activities, projects and community initiatives. It will enable supporters to see the people, communities and stories at the heart of our work."
 
 - The owner has **not supplied photos yet**. Build a responsive masonry grid driven by a single data file (`/data/gallery.ts`) so real images can be dropped into `/public/gallery/` and listed with a caption.
 - With zero images, show a tasteful "Photographs coming soon" empty state. **Never fill the gallery with stock photos presented as the organisation's work.**
 - Include a lightbox with keyboard support (Esc, arrow keys) and focus trapping.
 
 ### 3.7 DONATE / VOLUNTEER / PARTNER
+
 - **Donate** — "Support our charitable programmes and community initiatives." Button text: **DONATE NOW**.
 - **Volunteer** — "Give your time, knowledge, experience or skills to help make a difference." Button: **BECOME A VOLUNTEER**. Page has a form (name, email, phone, skills/area of interest, message).
 - **Partner With Us** — "We welcome partnerships with organisations, businesses, professionals and community groups that share our commitment to positive change." Button: **PARTNER WITH US**. Page has a form (organisation, contact name, email, phone, message).
@@ -120,8 +127,10 @@ Copy: **Our Gallery** — *See Our Work in Action.* "Our gallery will share genu
 **Payments:** no payment gateway or bank details have been provided. Build the Donate page with a clearly marked integration point (`<DonateWidget />`) driven by env vars (e.g. `NEXT_PUBLIC_DONATE_URL`). If unset, the page shows the donation copy and a "Contact us to donate" button linking to `/contact`. **Do not invent bank account numbers, UPI IDs, charity registration numbers or payment links.**
 
 ### 3.8 CONTACT (`/contact`)
+
 Copy: "We welcome enquiries from supporters, volunteers, organisations and potential partners."
 Details (**use these placeholders exactly until the owner supplies real values; keep them in one config file `/config/site.ts`**):
+
 - Email: `[Official Email]`
 - Telephone: `[Telephone Number]`
 - Address: `[Official Address]`
@@ -129,29 +138,32 @@ Details (**use these placeholders exactly until the owner supplies real values; 
 Form button: **SEND US A MESSAGE**. Fields: name, email, phone (optional), subject, message. Include honeypot spam field, server-side Zod validation, success and error states.
 
 ### 3.9 FOOTER (every page)
-THE SHARE COMMUNITY · *Sharing Hope. Changing Lives.* · quick links · contact details from config · `© 2026 The Share Community. All Rights Reserved.`
+
+THE SHARE COMMUNITY · _Sharing Hope. Changing Lives._ · quick links · contact details from config · `© 2026 The Share Community. All Rights Reserved.`
 
 ---
 
 ## 4. Design System
 
 ### 4.1 Colour Palette — "Sunrise Hope"
+
 Warm, hopeful and trustworthy: a deep teal for trust, sunrise amber for hope, coral for warmth, on a soft cream canvas. Define as CSS variables and Tailwind theme tokens. **Never hard-code hex values in components.**
 
-| Token | Hex | Use |
-|---|---|---|
-| `--ink` | `#0B2E36` | Primary text, dark sections |
-| `--teal-900` | `#0F4C5C` | Brand primary, headers, dark backgrounds |
-| `--teal-600` | `#1B7F8C` | Links, secondary surfaces |
-| `--teal-100` | `#D6EEF0` | Soft tints, card backgrounds |
-| `--sun-500` | `#F5A524` | **Hope accent**: primary CTA fill, highlights |
-| `--sun-200` | `#FDE3A8` | Soft glow, highlights |
-| `--coral-500` | `#E8644F` | Warm accent (Donate hover, small emphasis) |
-| `--leaf-500` | `#3BA776` | Growth accent (Livelihood / Community icons) |
-| `--cream` | `#FFF8EC` | Default page background |
-| `--white` | `#FFFFFF` | Cards |
+| Token         | Hex       | Use                                           |
+| ------------- | --------- | --------------------------------------------- |
+| `--ink`       | `#0B2E36` | Primary text, dark sections                   |
+| `--teal-900`  | `#0F4C5C` | Brand primary, headers, dark backgrounds      |
+| `--teal-600`  | `#1B7F8C` | Links, secondary surfaces                     |
+| `--teal-100`  | `#D6EEF0` | Soft tints, card backgrounds                  |
+| `--sun-500`   | `#F5A524` | **Hope accent**: primary CTA fill, highlights |
+| `--sun-200`   | `#FDE3A8` | Soft glow, highlights                         |
+| `--coral-500` | `#E8644F` | Warm accent (Donate hover, small emphasis)    |
+| `--leaf-500`  | `#3BA776` | Growth accent (Livelihood / Community icons)  |
+| `--cream`     | `#FFF8EC` | Default page background                       |
+| `--white`     | `#FFFFFF` | Cards                                         |
 
 Rules:
+
 - Page background is `--cream`, not pure white. Alternate sections between cream, white, `--teal-100` and full-bleed `--teal-900`.
 - Primary button: `--sun-500` background with `--ink` text (not white — white on amber fails contrast).
 - Use soft gradients (teal → deeper teal; amber → coral glow) for hero and CTA bands. No more than two gradients per viewport.
@@ -160,18 +172,21 @@ Rules:
 - Dark-mode toggle is NOT required. Do not build one.
 
 ### 4.2 Typography
+
 - Headings: a warm, humanist serif such as **Fraunces** or **Playfair Display** (via `next/font/google`).
 - Body/UI: a clean sans such as **Inter** or **DM Sans**.
 - Fluid type scale using `clamp()`. Hero H1 about `clamp(2.5rem, 6vw, 5rem)`. Body 17–18px, line-height 1.7, max line length ~70ch.
-- Use italic serif for the sub-lines (e.g. *Opening Doors to Brighter Futures*).
+- Use italic serif for the sub-lines (e.g. _Opening Doors to Brighter Futures_).
 
 ### 4.3 Shape, Space and Imagery
+
 - Generous whitespace; section padding `clamp(4rem, 10vw, 8rem)`.
 - Rounded cards (`rounded-3xl`), soft layered shadows, organic blob and wave dividers between sections (inline SVG, colour-matched to adjacent sections).
 - Decorative motifs: hands, sprouts/leaves, sunrise rays, linked circles ("community"). Draw as lightweight inline SVG; keep them subtle and tinted from the palette.
 - Photography (when supplied) is warm-toned, with faces shown respectfully. No pity imagery, no dramatic desaturation.
 
 ### 4.4 Components to build (reusable)
+
 `Header`, `Footer`, `Hero`, `SectionHeading`, `Button` (primary/secondary/ghost), `ProgrammeCard`, `ValueCard`, `TimelineItem`, `PersonCard`, `CTACard`, `PillTag`, `GalleryGrid`, `Lightbox`, `ScrollProgress`, `Reveal` (generic scroll-reveal wrapper), `FormField`, `WaveDivider`.
 
 ---
@@ -181,6 +196,7 @@ Rules:
 The signature feature is that **the site tells its story as the visitor scrolls**. Every page must feel alive while staying calm and respectful — gentle and purposeful, never gimmicky.
 
 ### 5.1 Global setup
+
 - Initialise **Lenis** smooth scroll once in a client provider and sync it with GSAP: `lenis.on('scroll', ScrollTrigger.update)` and drive Lenis from `gsap.ticker`.
 - Register ScrollTrigger once. Clean up triggers on unmount (`gsap.context()` + `ctx.revert()`).
 - Use `will-change` sparingly. Animate **only `transform` and `opacity`** (plus `clip-path` for reveals). Never animate `top/left/width/height`.
@@ -189,25 +205,26 @@ The signature feature is that **the site tells its story as the visitor scrolls*
 
 ### 5.2 Required effects
 
-| Where | Effect |
-|---|---|
-| **Hero** | Headline lines reveal word-by-word (masked slide-up). Soft sunrise gradient + SVG rays slowly rotate/scale. Background shapes move with **parallax** at different speeds. A "scroll" cue pulses at the bottom. |
-| **Section headings** | Fade-up with an animated underline drawing in under the keyword. |
-| **Belief / Welcome text** | Paragraph text **colour-fills word by word as the user scrolls** (grey → ink), scrubbed to scroll position. |
-| **What We Do cards** | Staggered rise-in; hover lifts, icon tile rotates slightly; on desktop, a **horizontal pinned scroll** or a staggered grid (pick one; fall back to the grid on mobile). |
-| **Vision / Mission** | Full-bleed teal section; two large cards slide in from opposite sides; background gradient shifts as it passes. |
-| **Numbers/Counters** | **Do not add any statistics counters.** No figures have been supplied. |
-| **About — Our Story** | Vertical timeline: a line **draws itself** (SVG stroke scrubbed to scroll) while each story step fades in beside it (Founder's vision → legacy → CEO continues → future ambition). |
-| **Founder / CEO** | Portrait frames reveal with a `clip-path` wipe; text staggers in. |
-| **Values** | 8 cards pop in with a stagger; icons gently float on hover. |
-| **Programmes page** | Each programme block alternates sides; image/illustration has a subtle parallax; the accent colour band expands behind it. A sticky side index highlights the active programme (scroll-spy) on desktop. |
-| **Future Programmes pills** | Infinite slow marquee, paused on hover and under reduced motion. |
-| **Gallery** | Images fade/scale in with stagger; lightbox open/close transitions. |
-| **CTA band (Donate / Volunteer / Partner)** | Cards rise with stagger; Donate card has a gentle pulsing amber glow (static under reduced motion). |
-| **Section transitions** | Animated wave/blob dividers; background colour blends smoothly between sections. |
-| **Footer** | Fade-up; tagline reveals as it enters. |
+| Where                                       | Effect                                                                                                                                                                                                         |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hero**                                    | Headline lines reveal word-by-word (masked slide-up). Soft sunrise gradient + SVG rays slowly rotate/scale. Background shapes move with **parallax** at different speeds. A "scroll" cue pulses at the bottom. |
+| **Section headings**                        | Fade-up with an animated underline drawing in under the keyword.                                                                                                                                               |
+| **Belief / Welcome text**                   | Paragraph text **colour-fills word by word as the user scrolls** (grey → ink), scrubbed to scroll position.                                                                                                    |
+| **What We Do cards**                        | Staggered rise-in; hover lifts, icon tile rotates slightly; on desktop, a **horizontal pinned scroll** or a staggered grid (pick one; fall back to the grid on mobile).                                        |
+| **Vision / Mission**                        | Full-bleed teal section; two large cards slide in from opposite sides; background gradient shifts as it passes.                                                                                                |
+| **Numbers/Counters**                        | **Do not add any statistics counters.** No figures have been supplied.                                                                                                                                         |
+| **About — Our Story**                       | Vertical timeline: a line **draws itself** (SVG stroke scrubbed to scroll) while each story step fades in beside it (Founder's vision → legacy → CEO continues → future ambition).                             |
+| **Founder / CEO**                           | Portrait frames reveal with a `clip-path` wipe; text staggers in.                                                                                                                                              |
+| **Values**                                  | 8 cards pop in with a stagger; icons gently float on hover.                                                                                                                                                    |
+| **Programmes page**                         | Each programme block alternates sides; image/illustration has a subtle parallax; the accent colour band expands behind it. A sticky side index highlights the active programme (scroll-spy) on desktop.        |
+| **Future Programmes pills**                 | Infinite slow marquee, paused on hover and under reduced motion.                                                                                                                                               |
+| **Gallery**                                 | Images fade/scale in with stagger; lightbox open/close transitions.                                                                                                                                            |
+| **CTA band (Donate / Volunteer / Partner)** | Cards rise with stagger; Donate card has a gentle pulsing amber glow (static under reduced motion).                                                                                                            |
+| **Section transitions**                     | Animated wave/blob dividers; background colour blends smoothly between sections.                                                                                                                               |
+| **Footer**                                  | Fade-up; tagline reveals as it enters.                                                                                                                                                                         |
 
 ### 5.3 Rules
+
 - **`prefers-reduced-motion: reduce` MUST be honoured.** When set: disable Lenis, parallax, marquee, scrubbed text fills and pinned sections; show content in its final state with at most a simple opacity fade.
 - Content must be fully readable and navigable **without JavaScript animation** (progressive enhancement). Never hide content permanently with `opacity: 0` in CSS unless JS is confirmed running.
 - No scroll-jacking that blocks users from scrolling past a section. Pinned sections must be short (≤ ~1.5 viewport heights).
@@ -306,7 +323,7 @@ Keep all page copy in `/content` so the owner can edit text without touching com
 - Server Components by default; add `"use client"` only for animation, menus, forms and the lightbox.
 - Small, single-purpose components; no file over ~250 lines.
 - ESLint + Prettier configured; code must pass `next build` with zero warnings.
-- Environment variables documented in `.env.example` (mail provider keys, `NEXT_PUBLIC_DONATE_URL`, `NEXT_PUBLIC_SITE_URL`). Never commit secrets.
+- Environment variables documented in `.env.example` (mail provider keys, `NEXT_PUBLIC_DONATE_URL`, `SITE_URL`). Never commit secrets.
 - Sanitise and validate all form input server-side; rate-limit the form endpoints; use the honeypot field.
 - No tracking or analytics cookies by default. If analytics is added later, use a privacy-friendly option and add a consent notice.
 
@@ -324,6 +341,7 @@ Keep all page copy in `/content` so the owner can edit text without touching com
 8. Report to the owner: what was built, the Open Issues in §9, and the `ASSETS_NEEDED.md` list.
 
 ### Definition of Done
+
 - [ ] All 8 routes render and are linked correctly
 - [ ] All copy matches the source document word for word (British spelling intact)
 - [ ] Palette matches §4.1 and meets WCAG AA contrast

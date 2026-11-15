@@ -2,8 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
 import { SmoothScrollProvider } from "@/components/animation/SmoothScrollProvider";
 
 const fraunces = Fraunces({
@@ -74,11 +73,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col bg-cream text-ink antialiased selection:bg-sun-200 selection:text-ink">
         <SmoothScrollProvider>
-          <Header />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-          <Footer />
+          <ConditionalLayout>{children}</ConditionalLayout>
         </SmoothScrollProvider>
       </body>
     </html>

@@ -117,7 +117,16 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-teal-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-teal-100/70">
-          <p>© 2026 The Share Community. All Rights Reserved.</p>
+          <div className="flex items-center gap-3">
+            <p>© 2026 The Share Community. All Rights Reserved.</p>
+            <span>•</span>
+            <Link
+              href="/admin"
+              className="text-teal-100/60 hover:text-sun-500 transition-colors"
+            >
+              Admin Portal
+            </Link>
+          </div>
           <p className="font-serif italic text-teal-100/90 text-sm">
             {siteConfig.tagline}
           </p>

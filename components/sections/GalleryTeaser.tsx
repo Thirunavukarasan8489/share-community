@@ -11,7 +11,32 @@ import { galleryItems } from "@/data/gallery";
 
 export function GalleryTeaser() {
   const { galleryTeaser } = homeContent;
-  const previewItems = galleryItems.slice(0, 3);
+  const [items, setItems] = React.useState(galleryItems);
+
+  React.useEffect(() => {
+    let isMounted = true;
+    fetch("/api/gallery")
+      .then((res) => res.json())
+      .then((data) => {
+        if (
+          isMounted &&
+          data.success &&
+          Array.isArray(data.items) &&
+          data.items.length > 0
+        ) {
+          setItems(data.items);
+        }
+      })
+      .catch((err) => {
+        console.warn("Using fallback gallery items:", err);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const previewItems = items.slice(0, 3);
 
   return (
     <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-cream relative">

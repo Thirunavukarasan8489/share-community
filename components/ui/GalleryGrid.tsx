@@ -17,13 +17,37 @@ import {
 } from "lucide-react";
 
 export function GalleryGrid() {
+  const [items, setItems] = useState<GalleryItem[]>(galleryItems);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
+  useEffect(() => {
+    let isMounted = true;
+    fetch("/api/gallery")
+      .then((res) => res.json())
+      .then((data) => {
+        if (
+          isMounted &&
+          data.success &&
+          Array.isArray(data.items) &&
+          data.items.length > 0
+        ) {
+          setItems(data.items);
+        }
+      })
+      .catch((err) => {
+        console.warn("Using fallback static gallery items:", err);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   const filteredItems = useMemo(() => {
-    if (selectedCategory === "All") return galleryItems;
-    return galleryItems.filter((item) => item.category === selectedCategory);
-  }, [selectedCategory]);
+    if (selectedCategory === "All") return items;
+    return items.filter((item) => item.category === selectedCategory);
+  }, [items, selectedCategory]);
 
   const activeItem: GalleryItem | null =
     selectedIndex !== null && filteredItems[selectedIndex]
@@ -70,7 +94,7 @@ export function GalleryGrid() {
   }, [selectedIndex, handleClose, handlePrev, handleNext]);
 
   // Fallback empty state if zero images exist
-  if (galleryItems.length === 0) {
+  if (items.length === 0) {
     return (
       <div className="max-w-3xl mx-auto my-12 bg-white rounded-3xl p-8 sm:p-14 border border-teal-900/10 shadow-xs text-center flex flex-col items-center">
         <div className="w-16 h-16 rounded-3xl bg-teal-100 flex items-center justify-center text-teal-900 mb-6 shadow-inner">

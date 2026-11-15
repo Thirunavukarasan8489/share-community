@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { contactSchema } from "@/lib/zodSchemas";
 import { sendEmail } from "@/lib/email";
+import { getDatabase, ContactSubmission } from "@/lib/mongodb";
 
 export async function POST(request: Request) {
   try {
@@ -21,11 +22,35 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true, message: "Enquiry received." });
     }
 
-    await sendEmail({
-      subject: `New Contact Enquiry: ${subject}`,
-      replyTo: email,
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nSubject: ${subject}\n\nMessage:\n${message}`,
-    });
+    // 1. Store submission in MongoDB database
+    try {
+      const db = await getDatabase();
+      const contactDoc: ContactSubmission = {
+        name,
+        email,
+        phone: phone && phone.trim() ? phone.trim() : null,
+        subject,
+        message,
+        status: "new",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
+      await db.collection<ContactSubmission>("contacts").insertOne(contactDoc);
+    } catch (dbError) {
+      console.error("Failed to save contact enquiry to MongoDB:", dbError);
+      throw dbError;
+    }
+
+    // 2. Dispatch email notification (best effort)
+    try {
+      await sendEmail({
+        subject: `New Contact Enquiry: ${subject}`,
+        replyTo: email,
+        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nSubject: ${subject}\n\nMessage:\n${message}`,
+      });
+    } catch (emailError) {
+      console.warn("Email dispatch failed after storing contact in DB:", emailError);
+    }
 
     return NextResponse.json({
       success: true,
