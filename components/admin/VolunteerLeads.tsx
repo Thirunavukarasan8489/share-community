@@ -9,7 +9,6 @@ import {
   Phone,
   Trash2,
   Calendar,
-  Sparkles,
   Inbox,
   X,
   ExternalLink,
@@ -340,7 +339,7 @@ export default function VolunteerLeads() {
 
                 <div className="bg-cream/60 p-2.5 rounded-xl border border-ink/5 space-y-1.5">
                   <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-teal-100/70 text-teal-900 text-xs font-medium">
-                    <Sparkles className="w-3 h-3 text-sun-500" />
+                    <Award className="w-3 h-3 text-sun-500" />
                     Skills: {lead.skills}
                   </div>
                   <p className="text-xs text-ink/70 line-clamp-2">
@@ -441,7 +440,7 @@ export default function VolunteerLeads() {
                   Skills, Experience or Area of Interest
                 </span>
                 <div className="mt-1 p-3 rounded-xl bg-teal-100/50 border border-teal-600/20 text-xs sm:text-sm font-semibold text-teal-900 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-sun-500 shrink-0" />
+                  <Award className="w-4 h-4 text-sun-500 shrink-0" />
                   <span>{selectedLead.skills}</span>
                 </div>
               </div>

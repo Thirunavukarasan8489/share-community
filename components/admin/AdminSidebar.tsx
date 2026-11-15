@@ -9,11 +9,11 @@ import {
   Mail,
   Users,
   Building2,
-  ExternalLink,
+  Globe,
+  ArrowUpRight,
   LogOut,
   X,
   Shield,
-  Sparkles,
 } from "lucide-react";
 
 export type TabType = "gallery" | "contacts" | "volunteers" | "partners";
@@ -214,11 +214,11 @@ export function AdminSidebar({
           <Link
             href="/"
             target="_blank"
-            className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-xs text-teal-100/75 hover:bg-teal-800/40 hover:text-white font-medium transition-colors"
+            className="w-full group flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-xs text-teal-100/75 hover:bg-teal-800/40 hover:text-white font-medium transition-colors"
           >
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-teal-800/60 flex items-center justify-center text-teal-100/80 shrink-0">
-                <ExternalLink className="w-4 h-4" />
+              <div className="w-8 h-8 rounded-xl bg-teal-800/60 flex items-center justify-center text-teal-100/80 group-hover:text-sun-400 group-hover:bg-teal-800 transition-colors shrink-0">
+                <Globe className="w-4 h-4" />
               </div>
               <div>
                 <span className="block text-xs font-semibold">View Live Website</span>
@@ -227,7 +227,7 @@ export function AdminSidebar({
                 </span>
               </div>
             </div>
-            <Sparkles className="w-3.5 h-3.5 text-sun-500" />
+            <ArrowUpRight className="w-4 h-4 text-teal-100/40 group-hover:text-sun-500 transition-colors" />
           </Link>
         </div>
 
