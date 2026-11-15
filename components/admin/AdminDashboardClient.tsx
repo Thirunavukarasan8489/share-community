@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import { AdminSidebar, TabType } from "./AdminSidebar";
 import { AdminTopBar } from "./AdminTopBar";
 import { AdminStats } from "./AdminStats";
@@ -17,6 +18,7 @@ interface StatsData {
 }
 
 export default function AdminDashboardClient() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<TabType>("gallery");
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -26,6 +28,23 @@ export default function AdminDashboardClient() {
     volunteers: { total: 0, newCount: 0 },
     partners: { total: 0, newCount: 0 },
   });
+
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+
+  // Authenticate on mount
+  useEffect(() => {
+    fetch("/api/admin/me")
+      .then((res) => {
+        if (!res.ok) {
+          router.push("/admin/login");
+        } else {
+          setIsCheckingAuth(false);
+        }
+      })
+      .catch(() => {
+        router.push("/admin/login");
+      });
+  }, [router]);
 
   // Responsive initialisation: default closed on mobile, open on desktop
   useEffect(() => {
@@ -57,6 +76,15 @@ export default function AdminDashboardClient() {
   useEffect(() => {
     fetchStats();
   }, [fetchStats, activeTab]);
+
+  if (isCheckingAuth) {
+    return (
+      <div className="min-h-screen bg-cream flex flex-col items-center justify-center p-4">
+        <div className="w-10 h-10 border-3 border-teal-600 border-t-sun-500 rounded-full animate-spin mb-4" />
+        <p className="text-ink/70 font-sans text-sm font-medium">Verifying admin session...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-cream/70 flex text-ink font-sans overflow-x-hidden">

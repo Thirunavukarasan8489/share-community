@@ -1,9 +1,6 @@
-import { redirect } from "next/navigation";
-import { isAuthenticatedAdmin } from "@/lib/adminAuth";
+import React, { Suspense } from "react";
 import AdminDashboardClient from "@/components/admin/AdminDashboardClient";
 import type { Metadata } from "next";
-
-export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Admin Dashboard | The Share Community",
@@ -14,12 +11,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function AdminPage() {
-  const isAuth = await isAuthenticatedAdmin();
-
-  if (!isAuth) {
-    redirect("/admin/login");
-  }
-
-  return <AdminDashboardClient />;
+export default function AdminPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-cream flex items-center justify-center font-sans text-ink/70">
+          Loading Admin Dashboard...
+        </div>
+      }
+    >
+      <AdminDashboardClient />
+    </Suspense>
+  );
 }
+
