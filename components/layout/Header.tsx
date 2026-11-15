@@ -46,10 +46,6 @@ export function Header() {
     };
   }, [mobileMenuOpen]);
 
-  if (pathname?.startsWith("/admin")) {
-    return null;
-  }
-
   return (
     <>
       {/* Skip to main content link for keyboard accessibility */}

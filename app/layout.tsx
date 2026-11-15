@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
-import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
 import { SmoothScrollProvider } from "@/components/animation/SmoothScrollProvider";
 
 const fraunces = Fraunces({
@@ -60,6 +59,7 @@ export const viewport: Viewport = {
   maximumScale: 5,
   themeColor: "#0F4C5C",
 };
+
 export default function RootLayout({
   children,
 }: {
@@ -71,9 +71,7 @@ export default function RootLayout({
       className={`${fraunces.variable} ${dmSans.variable} scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col bg-cream text-ink antialiased selection:bg-sun-200 selection:text-ink">
-        <SmoothScrollProvider>
-          <ConditionalLayout>{children}</ConditionalLayout>
-        </SmoothScrollProvider>
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );
