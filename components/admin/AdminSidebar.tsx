@@ -100,7 +100,7 @@ export function AdminSidebar({
 
       {/* Sidebar Container */}
       <aside
-        className={`fixed top-0 bottom-0 left-0 z-50 w-72 max-w-[85vw] lg:sticky lg:top-0 lg:h-screen lg:z-30 bg-teal-900 text-white flex flex-col border-r border-teal-800 shadow-xl lg:shadow-none transition-all duration-300 ease-in-out ${
+        className={`fixed inset-y-0 left-0 z-50 w-72 max-w-[85vw] h-full h-[100dvh] lg:static lg:h-full lg:z-30 shrink-0 bg-teal-900 text-white flex flex-col border-r border-teal-800 shadow-xl lg:shadow-none transition-all duration-300 ease-in-out select-none ${
           isOpen
             ? "translate-x-0 lg:w-72 lg:opacity-100"
             : "-translate-x-full lg:w-0 lg:-translate-x-full lg:opacity-0 lg:overflow-hidden lg:pointer-events-none"
@@ -108,7 +108,7 @@ export function AdminSidebar({
         aria-label="Admin Navigation Sidebar"
       >
         {/* Sidebar Brand Header */}
-        <div className="p-5 border-b border-teal-800/80 flex items-center justify-between shrink-0">
+        <div className="p-5 border-b border-teal-800/80 flex items-center justify-between shrink-0 bg-teal-950/30">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-2xl bg-sun-500 text-ink flex items-center justify-center p-2 shadow-sm shrink-0">
               <Image
@@ -144,7 +144,10 @@ export function AdminSidebar({
         </div>
 
         {/* Navigation Items */}
-        <div className="flex-1 overflow-y-auto px-3.5 py-5 space-y-1.5">
+        <div
+          data-lenis-prevent
+          className="flex-1 overflow-y-auto px-3.5 py-5 space-y-1.5 overscroll-contain"
+        >
           <div className="px-3 pb-2 text-[10px] font-bold text-teal-100/50 uppercase tracking-widest">
             Main Management
           </div>

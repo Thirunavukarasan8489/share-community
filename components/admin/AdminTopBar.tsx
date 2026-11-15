@@ -62,7 +62,7 @@ export function AdminTopBar({
   };
 
   return (
-    <header className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-ink/10 shadow-xs">
+    <header className="shrink-0 w-full z-20 bg-white/95 backdrop-blur-md border-b border-ink/10 shadow-xs">
       <div className="px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
         {/* Left: Hamburger menu toggle + Breadcrumbs */}
         <div className="flex items-center gap-3 sm:gap-4 min-w-0">

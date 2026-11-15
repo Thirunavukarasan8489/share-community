@@ -87,8 +87,8 @@ export default function AdminDashboardClient() {
   }
 
   return (
-    <div className="min-h-screen bg-cream/70 flex text-ink font-sans overflow-x-hidden">
-      {/* Responsive Slide-in / Collapsible Sidebar */}
+    <div className="h-screen h-[100dvh] bg-cream/70 flex text-ink font-sans overflow-hidden">
+      {/* Responsive Slide-in / Collapsible Fixed Sidebar */}
       <AdminSidebar
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
@@ -97,9 +97,9 @@ export default function AdminDashboardClient() {
         stats={stats}
       />
 
-      {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-w-0 transition-all duration-300 ease-in-out">
-        {/* Admin Top Bar with Hamburger menu & Active status */}
+      {/* Main Content Area (Fixed layout, internal scroll) */}
+      <div className="flex-1 flex flex-col h-full overflow-hidden min-w-0 transition-all duration-300 ease-in-out">
+        {/* Admin Top Bar with Hamburger menu & Active status (Fixed at top) */}
         <AdminTopBar
           isSidebarOpen={sidebarOpen}
           onToggleSidebar={() => setSidebarOpen((prev) => !prev)}
@@ -108,36 +108,42 @@ export default function AdminDashboardClient() {
           isRefreshing={isRefreshing}
         />
 
-        {/* Inner Content */}
-        <main className="flex-1 w-full max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-5 sm:py-7">
-          {/* Interactive KPI / Metric Summary Cards */}
-          <AdminStats stats={stats} onSelectTab={setActiveTab} />
+        {/* Dedicated Scrollable Workspace Container */}
+        <div
+          data-lenis-prevent
+          className="flex-1 overflow-y-auto overscroll-contain flex flex-col min-h-0"
+        >
+          {/* Inner Content */}
+          <main className="flex-1 w-full max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-5 sm:py-7">
+            {/* Interactive KPI / Metric Summary Cards */}
+            <AdminStats stats={stats} onSelectTab={setActiveTab} />
 
-          {/* Active Tab Panel */}
-          <div className="mt-2">
-            {activeTab === "gallery" && (
-              <GalleryManager onStatsChange={fetchStats} />
-            )}
-            {activeTab === "contacts" && <ContactLeads />}
-            {activeTab === "volunteers" && <VolunteerLeads />}
-            {activeTab === "partners" && <PartnerLeads />}
-          </div>
-        </main>
-
-        {/* Clean Admin Footer */}
-        <footer className="border-t border-ink/10 py-5 bg-white/70 text-center text-xs text-ink/60 mt-auto">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2.5">
-            <p>© 2026 The Share Community. Admin Control Centre.</p>
-            <div className="flex items-center gap-3 text-ink/70">
-              <span className="inline-flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                MongoDB Live
-              </span>
-              <span>•</span>
-              <span className="text-teal-900 font-medium">Authorised Session</span>
+            {/* Active Tab Panel */}
+            <div className="mt-2">
+              {activeTab === "gallery" && (
+                <GalleryManager onStatsChange={fetchStats} />
+              )}
+              {activeTab === "contacts" && <ContactLeads />}
+              {activeTab === "volunteers" && <VolunteerLeads />}
+              {activeTab === "partners" && <PartnerLeads />}
             </div>
-          </div>
-        </footer>
+          </main>
+
+          {/* Clean Admin Footer */}
+          <footer className="border-t border-ink/10 py-5 bg-white/70 text-center text-xs text-ink/60 mt-auto shrink-0">
+            <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2.5">
+              <p>© 2026 The Share Community. Admin Control Centre.</p>
+              <div className="flex items-center gap-3 text-ink/70">
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  MongoDB Live
+                </span>
+                <span>•</span>
+                <span className="text-teal-900 font-medium">Authorised Session</span>
+              </div>
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
   );

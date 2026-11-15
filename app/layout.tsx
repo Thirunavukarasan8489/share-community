@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
-import { SmoothScrollProvider } from "@/components/animation/SmoothScrollProvider";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -71,7 +70,7 @@ export default function RootLayout({
       className={`${fraunces.variable} ${dmSans.variable} scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col bg-cream text-ink antialiased selection:bg-sun-200 selection:text-ink">
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        {children}
       </body>
     </html>
   );
