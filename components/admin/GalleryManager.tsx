@@ -13,6 +13,7 @@ import {
   Loader2,
   AlertCircle,
   CheckCircle,
+  ImageOff,
 } from "lucide-react";
 
 export interface GalleryItemData {
@@ -54,6 +55,7 @@ export function GalleryManager({ onStatsChange }: { onStatsChange?: () => void }
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
   // Modal States
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -359,13 +361,23 @@ export function GalleryManager({ onStatsChange }: { onStatsChange?: () => void }
               className="bg-white rounded-3xl overflow-hidden border border-teal-900/10 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
             >
               <div className="relative aspect-[4/3] w-full bg-teal-900/5 overflow-hidden">
-                <Image
-                  src={item.src}
-                  alt={item.alt || item.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                {!failedImages[item.id] ? (
+                  <Image
+                    src={item.src}
+                    alt={item.alt || item.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={() => {
+                      setFailedImages((prev) => ({ ...prev, [item.id]: true }));
+                    }}
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-teal-900/10 text-teal-900/60 p-4">
+                    <ImageOff className="w-8 h-8 mb-2 text-teal-600" />
+                    <span className="text-xs font-semibold text-center">{item.title}</span>
+                  </div>
+                )}
                 <div className="absolute top-3 left-3">
                   <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-teal-900/85 backdrop-blur-md text-white shadow-xs">
                     {item.category}

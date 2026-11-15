@@ -9,7 +9,7 @@ export function Footer() {
     <footer
       className="text-white relative overflow-hidden dark-surface border-t border-teal-800 bg-cover bg-center bg-no-repeat md:bg-fixed"
       style={{
-        backgroundImage: "url('/images/gallery/Education%20Support.jpeg')",
+        backgroundImage: "url('https://res.cloudinary.com/xgvrkpes/image/upload/v1794754467/share-community/gallery/education-support.jpg')",
       }}
     >
       {/* Deep teal-900 fade overlay to guarantee legibility and subtle photographic texture */}

@@ -22,7 +22,7 @@ export function VisionMission({ vision, mission }: VisionMissionProps) {
     <section
       className="relative text-white py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden dark-surface bg-cover bg-center bg-no-repeat md:bg-fixed"
       style={{
-        backgroundImage: "url('/images/gallery/Community%20Development.jpeg')",
+        backgroundImage: "url('https://res.cloudinary.com/xgvrkpes/image/upload/v1794754470/share-community/gallery/community-development.jpg')",
       }}
       aria-labelledby="vision-mission-heading"
     >

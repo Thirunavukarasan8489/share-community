@@ -25,7 +25,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "education-support",
     title: "Education Support",
-    src: "/images/gallery/Education%20Support.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754467/share-community/gallery/education-support.jpg",
     alt: "Education Support programme providing learning opportunities and academic assistance",
     caption:
       "Education Support — Opening doors to brighter futures through learning materials, academic guidance and educational access.",
@@ -37,7 +37,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "healthcare-wellbeing",
     title: "Healthcare & Wellbeing",
-    src: "/images/gallery/Healthcare%20%26%20Wellbeing.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754468/share-community/gallery/healthcare-wellbeing.jpg",
     alt: "Healthcare and wellbeing initiatives supporting health and human dignity in the community",
     caption:
       "Healthcare & Wellbeing — Supporting community health, preventive care initiatives and preserving human dignity.",
@@ -49,7 +49,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "food-essential-assistance",
     title: "Food & Essential Assistance",
-    src: "/images/gallery/Food%20%26%20Essential%20Assistance.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754468/share-community/gallery/food-essential-assistance.jpg",
     alt: "Food and essential supplies distributed to individuals and families facing hardship",
     caption:
       "Food & Essential Assistance — Providing practical nourishment and relief to people facing acute hardship and times of difficulty.",
@@ -61,7 +61,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "childrens-welfare",
     title: "Children's Welfare",
-    src: "/images/gallery/Children%27s%20Welfare.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754469/share-community/gallery/childrens-welfare.jpg",
     alt: "Children's welfare activities fostering encouragement, safety and flourishing development",
     caption:
       "Children's Welfare — Protecting, encouraging and nurturing young lives to ensure every child has the opportunity to flourish.",
@@ -73,7 +73,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "community-development",
     title: "Community Development",
-    src: "/images/gallery/Community%20Development.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754470/share-community/gallery/community-development.jpg",
     alt: "Community development activities strengthening local relationships and shared progress",
     caption:
       "Community Development — Strengthening local bonds, facilities and cooperative initiatives for lasting resilience and shared growth.",
@@ -85,7 +85,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "livelihood-skills",
     title: "Livelihood & Skills Development",
-    src: "/images/gallery/Livelihood%20%26%20Skills%20Development.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754471/share-community/gallery/livelihood-skills.jpg",
     alt: "Livelihood and practical vocational skills development training for sustainable self-reliance",
     caption:
       "Livelihood & Skills Development — Equipping people with practical vocational skills to build sustainable independence and bright futures.",
@@ -97,7 +97,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "emergency-disaster-relief",
     title: "Emergency & Disaster Relief",
-    src: "/images/gallery/Emergency%20%26%20Disaster%20Relief.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754472/share-community/gallery/emergency-disaster-relief.jpg",
     alt: "Emergency and disaster relief assistance delivered during acute crises",
     caption:
       "Emergency & Disaster Relief — Responsive, compassionate assistance deployed to alleviate immediate crisis and aid recovery.",

@@ -1,0 +1,44 @@
+{
+  "education-support": {
+    "url": "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754467/share-community/gallery/education-support.jpg",
+    "width": 1620,
+    "height": 971,
+    "publicId": "share-community/gallery/education-support"
+  },
+  "healthcare-wellbeing": {
+    "url": "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754468/share-community/gallery/healthcare-wellbeing.jpg",
+    "width": 1254,
+    "height": 1254,
+    "publicId": "share-community/gallery/healthcare-wellbeing"
+  },
+  "food-essential-assistance": {
+    "url": "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754468/share-community/gallery/food-essential-assistance.jpg",
+    "width": 901,
+    "height": 869,
+    "publicId": "share-community/gallery/food-essential-assistance"
+  },
+  "childrens-welfare": {
+    "url": "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754469/share-community/gallery/childrens-welfare.jpg",
+    "width": 1536,
+    "height": 1024,
+    "publicId": "share-community/gallery/childrens-welfare"
+  },
+  "community-development": {
+    "url": "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754470/share-community/gallery/community-development.jpg",
+    "width": 1536,
+    "height": 1024,
+    "publicId": "share-community/gallery/community-development"
+  },
+  "livelihood-skills": {
+    "url": "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754471/share-community/gallery/livelihood-skills.jpg",
+    "width": 1536,
+    "height": 1024,
+    "publicId": "share-community/gallery/livelihood-skills"
+  },
+  "emergency-disaster-relief": {
+    "url": "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754472/share-community/gallery/emergency-disaster-relief.jpg",
+    "width": 1268,
+    "height": 1240,
+    "publicId": "share-community/gallery/emergency-disaster-relief"
+  }
+}

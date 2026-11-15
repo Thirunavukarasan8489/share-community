@@ -20,6 +20,7 @@ export function GalleryGrid() {
   const [items, setItems] = useState<GalleryItem[]>(galleryItems);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     let isMounted = true;
@@ -167,13 +168,23 @@ export function GalleryGrid() {
               }}
               aria-label={`View full photo: ${item.title}`}
             >
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              {!failedImages[item.id] ? (
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={() => {
+                    setFailedImages((prev) => ({ ...prev, [item.id]: true }));
+                  }}
+                />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center bg-teal-900/10 text-teal-900/60 p-4">
+                  <Camera className="w-8 h-8 mb-2 text-teal-600" />
+                  <span className="text-xs font-semibold">{item.title}</span>
+                </div>
+              )}
 
               {/* Category Pill Over Image */}
               <div className="absolute top-4 left-4 z-10">
@@ -271,14 +282,27 @@ export function GalleryGrid() {
             {/* Central Stage */}
             <div className="max-w-5xl w-full max-h-[85vh] flex flex-col items-center z-10 px-8 sm:px-14">
               <div className="relative w-full h-[55vh] sm:h-[65vh]">
-                <Image
-                  src={activeItem.src}
-                  alt={activeItem.alt}
-                  fill
-                  priority
-                  sizes="(max-width: 1280px) 90vw, 1200px"
-                  className="rounded-2xl object-contain drop-shadow-2xl"
-                />
+                {!failedImages[activeItem.id] ? (
+                  <Image
+                    src={activeItem.src}
+                    alt={activeItem.alt}
+                    fill
+                    priority
+                    sizes="(max-width: 1280px) 90vw, 1200px"
+                    className="rounded-2xl object-contain drop-shadow-2xl"
+                    onError={() => {
+                      setFailedImages((prev) => ({
+                        ...prev,
+                        [activeItem.id]: true,
+                      }));
+                    }}
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-teal-900/40 text-white rounded-2xl p-6">
+                    <Camera className="w-12 h-12 mb-3 text-sun-500" />
+                    <span className="text-sm font-semibold">{activeItem.title}</span>
+                  </div>
+                )}
               </div>
 
               {/* Caption and Information Card */}

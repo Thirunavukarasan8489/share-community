@@ -9,7 +9,7 @@ export function FutureProgrammesMarquee() {
       className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 text-white overflow-hidden relative dark-surface border-t border-teal-800 bg-cover bg-center bg-no-repeat md:bg-fixed"
       style={{
         backgroundImage:
-          "url('/images/gallery/Livelihood%20%26%20Skills%20Development.jpeg')",
+          "url('https://res.cloudinary.com/xgvrkpes/image/upload/v1794754471/share-community/gallery/livelihood-skills.jpg')",
       }}
       aria-labelledby="future-programmes-heading"
     >

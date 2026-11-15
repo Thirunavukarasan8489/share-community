@@ -18,27 +18,27 @@ import { WatermarkLogo } from "@/components/ui/WatermarkLogo";
 
 const programmeImages: Record<string, { src: string; alt: string }> = {
   "education-for-all": {
-    src: "/images/gallery/Education%20Support.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754467/share-community/gallery/education-support.jpg",
     alt: "Education Support programme providing learning access and materials",
   },
   "healthcare-and-wellbeing": {
-    src: "/images/gallery/Healthcare%20%26%20Wellbeing.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754468/share-community/gallery/healthcare-wellbeing.jpg",
     alt: "Healthcare and wellbeing initiatives in the local community",
   },
   "food-and-essential-assistance": {
-    src: "/images/gallery/Food%20%26%20Essential%20Assistance.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754468/share-community/gallery/food-essential-assistance.jpg",
     alt: "Food and essential assistance provided to individuals and families",
   },
   "childrens-welfare": {
-    src: "/images/gallery/Children%27s%20Welfare.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754469/share-community/gallery/childrens-welfare.jpg",
     alt: "Children's welfare support ensuring safe and encouraging environments",
   },
   "community-development": {
-    src: "/images/gallery/Community%20Development.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754470/share-community/gallery/community-development.jpg",
     alt: "Community development activities fostering local progress",
   },
   "livelihood-and-skills-development": {
-    src: "/images/gallery/Livelihood%20%26%20Skills%20Development.jpeg",
+    src: "https://res.cloudinary.com/xgvrkpes/image/upload/v1794754471/share-community/gallery/livelihood-skills.jpg",
     alt: "Livelihood and vocational skills training for self-reliance",
   },
 };
